@@ -11,3 +11,5 @@
 4. Access Your Application:
    Access your frontend at `http://localhost:3000` and backend at specified port.
 Command to Start Both Backend and frontEnd  : "npm run dev"
+
+##### STATIC OTP : 1234 ######
