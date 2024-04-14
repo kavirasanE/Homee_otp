@@ -1,16 +1,24 @@
-import React, { useContext, useReducer, useState } from 'react'
+import React, { useContext, useEffect, useReducer, useState } from 'react'
 import logo from '../assets/logo.png'
 import { LiaCrossSolid } from "react-icons/lia";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { DataContext } from '../context/DataProvider';
 import FavouriteReducer, { InitialState } from '../store/FavouriteReducer';
+import { useSelector } from 'react-redux';
 const Navbar = () => {
-  const { magazineId } = useContext(DataContext);
+  // const { magazineId } = useContext(DataContext);
   const [state, dispatch] = useReducer(FavouriteReducer, InitialState);
+
+  const counter = useSelector((state) => state.favourites.value)
+  useEffect(() => {
+    counter
+  },[counter])
+
   const [openmenu, setOpenmenu] = useState(false);
   const [openAboutmenu, setOpenAboutmenu] = useState(false);
   const [openMinsteries, setOpenMinsteries] = useState(false)
+
   const handlechange = () => {
     dispatch({ type: "add" })
   }
@@ -67,6 +75,9 @@ const Navbar = () => {
               }
 
             </div>
+          }
+          {counter >0 && 
+          <p className='absolute right-40 z-10 mb-10 bg-white rounded-full px-2 p-0.5 text-center text-sm font-bold '>{counter}</p>
           }
           <Link title="Bookmarks" className='pr-4' to="/fav">
             <LiaCrossSolid size={20} className=' rounded-full  w-10 h-10  cursor-pointer hover:scale-90 duration-150 translate-x-2 transition-transform ease-in-out' />

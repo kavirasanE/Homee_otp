@@ -1,58 +1,66 @@
 import React, { useContext, useEffect, useReducer, useState } from 'react'
 import magazine from '../assets/magazine.jpg'
 import { LiaCrossSolid } from "react-icons/lia";
-import { DataContext } from '../context/DataProvider';
-import { InitialState } from '../store/FavouriteReducer';
-import FavouriteReducer from '../store/FavouriteReducer'
+import { useDispatch, useSelector } from 'react-redux';
+import { addToFav } from '../redux/FavouriteSlice';
+import { bookmarkColor } from '../redux/FavouriteSlice';
+import { selectedBookmark } from '../redux/FavouriteSlice';
+// import { DataContext } from '../context/DataProvider';
+// import { InitialState } from '../store/FavouriteReducer';
+// import FavouriteReducer from '../store/FavouriteReducer'
 const Magazine_Card = ({ datas, index }) => {
-  const [bookmarkcolor, setBookmarkColor] = useState(false)
-  const { setmagazineId } = useContext(DataContext);
-  const [state, dispatch] = useReducer(FavouriteReducer, InitialState)
+  const [bookmarkcolor, setBookmarkColor] = useState(datas.color)
+  // const { setmagazineId } = useContext(DataContext);
+  // const [state, dispatch] = useReducer(FavouriteReducer, InitialState)
+  const dispatch = useDispatch();
+  const bookcolor = useSelector(selectedBookmark);
   useEffect(() => {
     const storedColor = localStorage.getItem(`color_${datas.id}`);
     if (storedColor) {
       setBookmarkColor(JSON.parse(storedColor));
     }
   }, []);
-
   const handleBookmark = (e) => {
-    e.preventDefault();
-    setBookmarkColor(!bookmarkcolor);
-    localStorage.setItem(`color_${datas.id}`, JSON.stringify(!bookmarkcolor));
-    setmagazineId((prevState) => {
-      return [
-        ...prevState,
-        { id: datas.id }
-      ];
-    });
-  };
-  // const handleBookmark =() => {
-  //   setBookmarkColor(!bookmarkcolor)
-  //    setmagazineId(prevstate => {
-  //     const name = "id"
-  //     return {
-  //       ...prevstate,
-  //        [name] : datas.id
-  //    }
-  //    })
-  // }
+    // e.preventDefault();
+    if(datas.color) {
+       setBookmarkColor(false);
+       localStorage.setItem(`color_${datas.id}`, JSON.stringify(false));
+    }else{
+      setBookmarkColor(!bookmarkcolor);
+      localStorage.setItem(`color_${datas.id}`, JSON.stringify(!bookmarkcolor));
+    }
+     
+   
+    // setmagazineId((prevState) => {
+    //   return [
+    //     ...prevState,
+    //     { id: datas.id }
+    //   ];
+    // });
+    const item = {
+      id: datas.id,
+      Title: datas.Title,
+      Year: datas.Year,
+      Writer: datas.Writer
+    }
+    dispatch(addToFav(item))
+    dispatch(bookmarkColor({ bookmarkColorState: true }))
+  }
 
-  // const handleBookmark = () => {
-  //   setBookmarkColor(!bookmarkcolor)
-  //   if (bookmarkcolor) {
-  //     dispatch({ type: "removeBookmark", payload: datas.id })
-  //   } else {
-  //     dispatch({ type: "AddBookmark", payload: datas })
-  //   }
-  // }
   return (
     <div className='p-10' key={index}>
       <div className='border-2 rounded-md bg-rose-100 '>
-        <button title=" Click to Bookmark" onClick={handleBookmark}>
+      {datas.color ?  <button title=" Click to Bookmark" onClick={handleBookmark}>
+      <p>remove bookcolor</p>
           <LiaCrossSolid size={20} color={bookmarkcolor ? "red" : "gray"} className={` ${bookmarkcolor ? "bg-gray-600" : "bg-white"} rounded-full 
            w-10 h-10  ml-64 mt-4 cursor-pointer hover:scale-90 
            duration-150 translate-x-2 transition-transform ease-in-out`} />
-        </button>
+        </button> :  <button title=" Click to Bookmark" onClick={handleBookmark}>
+          <LiaCrossSolid size={20} color={bookmarkcolor ? "red" : "gray"} className={` ${bookmarkcolor ? "bg-gray-600" : "bg-white"} rounded-full 
+           w-10 h-10  ml-64 mt-4 cursor-pointer hover:scale-90 
+           duration-150 translate-x-2 transition-transform ease-in-out`} />
+        </button>}
+       
         <div className='flex flex-col justify-start px-4  py-2 items-center '>
           <p className='font-bold text-xl text-start text-nowrap '>{datas.Title}</p>
           <p className='font-semibold text-xl text-start '> {datas.Year}</p>
@@ -77,3 +85,35 @@ const Magazine_Card = ({ datas, index }) => {
 }
 
 export default Magazine_Card
+
+
+// const handleBookmark = (e) => {
+//   e.preventDefault();
+//   setBookmarkColor(!bookmarkcolor);
+//   localStorage.setItem(`color_${datas.id}`, JSON.stringify(!bookmarkcolor));
+//   setmagazineId((prevState) => {
+//     return [
+//       ...prevState,
+//       { id: datas.id }
+//     ];
+//   });
+// };
+// const handleBookmark =() => {
+//   setBookmarkColor(!bookmarkcolor)
+//    setmagazineId(prevstate => {
+//     const name = "id"
+//     return {
+//       ...prevstate,
+//        [name] : datas.id
+//    }
+//    })
+// }
+
+// const handleBookmark = () => {
+//   setBookmarkColor(!bookmarkcolor)
+//   if (bookmarkcolor) {
+//     dispatch({ type: "removeBookmark", payload: datas.id })
+//   } else {
+//     dispatch({ type: "AddBookmark", payload: datas })
+//   }
+// }

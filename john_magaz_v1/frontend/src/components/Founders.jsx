@@ -1,10 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import charity from "../assets/charity.jpg"
+import { useDispatch, useSelector } from 'react-redux'
+import { increment } from '../redux/FavouriteSlice'
 const Founders = () => {
+    const count = useSelector((state) => state.favourites.value);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        console.log(count);
+    },[count])
     return (
         <div>
             <p className='font-bold text-4xl text-center pt-20'>Our Founder</p>
+            <div>
+                <p>{count}</p>
+                    <button onClick={() => dispatch(increment())}>press</button>
+                </div>
             <div className='flex flex-row justify-center items-center'>
+                
                 <img src={charity} className='w-1/2 p-20' />
                 <div className='py-10 text-justify pr-10 flex flex-col gap-4'>
                     <p>In the heart of a bustling community, amidst the echoes of hymns and prayers, stands a figure whose presence embodies the very essence of faith and resilience – the founder of a cherished church. Revered by many and known for his unwavering commitment to serving both God and humanity, the founder's journey is a testament to the transformative power of belief and dedication.</p>

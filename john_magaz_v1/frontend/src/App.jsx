@@ -8,13 +8,13 @@ const App = () => {
   return (
    <>
     <BrowserRouter>
-      <DataProvider>
+     
       <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/fav' element={<Favourites/>}/>
         <Route path='/page' element={<Page/>}/>
       </Routes>
-      </DataProvider>
+     
     </BrowserRouter>
    </>
   )
