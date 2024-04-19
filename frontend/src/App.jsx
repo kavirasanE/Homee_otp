@@ -7,13 +7,17 @@ import Page from './components/Page'
 import OurFounder from './pages/OurFounder'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import MeetWriter from './pages/MeetWriter'
+import TrustActivities from './pages/TrustActivities'
+import ChruchActivities from './pages/ChruchActivities'
+import ChildrenHome from './pages/ChildrenHome'
 const App = () => {
   return (
    <>
     <BrowserRouter>
-    <div className='bg-blue-200 flex justify-between items-center font-bold px-10 py-3'>
-      <p>24/7 Prayer HelpLine : 3874973649 email:Charity@gamil.com</p>
-      <p className='flex gap-2'>
+    <div className='bg-blue-200 flex lg:flex-row flex-col lg:justify-between lg:items-center font-bold px-2 lg:px-10 py-3'>
+      <p>24/7 Prayer HelpLine : 3874973649 <span className='lg:px-4'> Email:Charity@gamil.com</span></p>
+      <p className='flex gap-2 pt-2'>
       <span>Language</span>
         <span>Subscribe</span>
       </p>
@@ -26,6 +30,10 @@ const App = () => {
       <Route path='/fav' element={<Favourites/>}/>
         <Route path='/page' element={<Page/>}/>
         <Route path='/founder' element={<OurFounder/>}/>
+        <Route path='/meetwriter' element={<MeetWriter/>}/>
+        <Route path='/TrustActivities' element={<TrustActivities/>}/>
+        <Route path='/chruchActivites' element={<ChruchActivities/>}/>
+        <Route path='/Childrenshome' element={<ChildrenHome/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

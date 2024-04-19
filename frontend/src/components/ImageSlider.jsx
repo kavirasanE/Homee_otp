@@ -58,7 +58,7 @@ const ImageSlider = () => {
     p-2 top-1/2  right-5 cursor-pointer bg-white rounded-full' onClick={handleNext}/>
                 </div>
             }
-            <img src={imageSlider[count].url} alt='cjharity' className={`w-full h-80 transition-x-0 duration-600 ease-linear  `}
+            <img src={imageSlider[count].url} alt='cjharity' className={`w-full h-[350px] transition-x-0 duration-600 ease-linear  `}
                 onMouseEnter={() => setImageHover(true)}
                 onMouseLeave={() => setImageHover(false)}
             />

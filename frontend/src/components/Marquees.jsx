@@ -4,24 +4,14 @@ import charity  from '../assets/charity.jpg'
 const Marquees = () => {
   return (
     <div>
-
-    <Marquee>
-    <img src={charity} className='w-40 h-40 px-2'/>
-    <img src={charity} className='w-40 h-40 px-2'/>
-    <img src={charity} className='w-40 h-40 px-2'/>
-    <img src={charity} className='w-40 h-40 px-2'/>
-    <img src={charity} className='w-40 h-40 px-2'/>
-    <img src={charity} className='w-40 h-40 px-2'/>
-    <img src={charity} className='w-40 h-40 px-2'/>
-    <img src={charity} className='w-40 h-40 px-2'/>
-    <img src={charity} className='w-40 h-40 px-2'/>
-    <img src={charity} className='w-40 h-40 px-2'/>
-    <img src={charity} className='w-40 h-40 px-2'/>
-    <img src={charity} className='w-40 h-40 px-2'/>
-    <img src={charity} className='w-40 h-40 px-2'/>
-    <img src={charity} className='w-40 h-40 px-2'/>
-    <img src={charity} className='w-40 h-40 px-2'/>
-    <img src={charity} className='w-40 h-40 px-2'/>
+    <Marquee pauseOnHover pauseOnClick>
+    <img src={charity} className='w-60 h-60 mx-6'/>
+    <img src={charity} className='w-60 h-60 mx-6'/>
+    <img src={charity} className='w-60 h-60 mx-6'/>
+    <img src={charity} className='w-60 h-60 mx-6'/>
+    <img src={charity} className='w-60 h-60 mx-6'/>
+    <img src={charity} className='w-60 h-60 mx-6'/>
+   
   </Marquee>
     </div>
   )
