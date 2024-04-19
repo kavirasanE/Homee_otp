@@ -17,7 +17,8 @@ const Home = () => {
       "ReadPdf":"https://drive.google.com/file/d/1A4ISn4zzWNNFvSo2pyy1SJLyo26yw9Oc/view?usp=sharing",
       "Downloadpdf":"https://drive.google.com/file/d/1A4ISn4zzWNNFvSo2pyy1SJLyo26yw9Oc/view?usp=sharing",
       "Month":"April",
-      "Poster":"Image"
+      "Poster":"Image",
+      "color":false
      },
     {
       "id": "1",
@@ -27,7 +28,8 @@ const Home = () => {
       "ReadPdf": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
       "Downloadpdf": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
       "Month": "March",
-      "Poster": "poster1"
+      "Poster": "poster1",
+      "color":false
     },
     {
       "id": "2",
@@ -37,7 +39,8 @@ const Home = () => {
       "ReadPdf": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
       "Downloadpdf": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
       "Month": "May",
-      "Poster": "poster2"
+      "Poster": "poster2",
+      "color":false
     },
     {
       "id": "3",
@@ -111,14 +114,15 @@ const Home = () => {
     }
   ]
   // console.log(data);
-   const {setcontextData} =useContext(DataContext)
+  //  const {setcontextData} =useContext(DataContext)
     const [magazineData,setMagazineData] =useState(data)
+  
     // useEffect( =>(
     //   
     // ),[])
-    useEffect(() => {
-      setcontextData(data);
-    },[])
+    // useEffect(() => {
+    //   setcontextData(data);
+    // },[])
   return (
     <>
     <div className='bg-blue-200 flex justify-between items-center font-bold px-10 py-3'>
