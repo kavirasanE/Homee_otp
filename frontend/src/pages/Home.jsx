@@ -133,8 +133,6 @@ const Home = () => {
           <Magazine_Card key={index} datas={datas} />
         ))}
       </div>
-      <Marquee />
-
     </>
   )
 }

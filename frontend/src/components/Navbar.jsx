@@ -99,7 +99,7 @@ const Navbar = () => {
       <div className='lg:hidden font-semibold z-50'>
         <div className='flex justify-between items-center p-2 md:px-10 '>
         <Link to="/" >
-          <img src={logo} className='w-30 h-10'/>
+          <img src={logo} className='w-30 h-10' onClick={() => setOpenHamburgerMenu(true)}/>
         </Link>
          {openHamburgerMenu ? <GiHamburgerMenu className='text-xl' onClick={() => setOpenHamburgerMenu(false)}/> : 
           <IoCloseSharp  className='text-xl' onClick={() => setOpenHamburgerMenu(true)}/> }
@@ -136,7 +136,7 @@ const Navbar = () => {
               </div>
             }
             {counter > 0 &&
-              <p>{counter}</p>
+              <p className='bg-gray-200 text-black text-sm rounded-full absolute p-1 text-center w-6 h-6 ml-8 bottom-24'>{counter}</p>
             }
             <Link title="Bookmarks" to="/fav">
               <LiaCrossSolid size={40} />
