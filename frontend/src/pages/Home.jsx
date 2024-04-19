@@ -128,7 +128,7 @@ const Home = () => {
       <p className='italic flex flex-col justify-center items-center gap-4 py-4 font-semibold text-xl'> <span className='font-bold text-2xl'>Proverbs 19:17</span>
         "Whoever is kind to the poor lends to the LORD, and he will reward them for what they have done."</p>
       <p className='text-center font-bold'>"நிறைந்த மனிதனுக்கு நன்மை செய்தவர் பயனராகும்; பலனை அவன் பெறும்."</p>
-      <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3'>
+      <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5'>
         {magazineData.map((datas, index) => (
           <Magazine_Card key={index} datas={datas} />
         ))}

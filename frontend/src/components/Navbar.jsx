@@ -96,7 +96,7 @@ const Navbar = () => {
 
       </div> 
 
-      <div className='lg:hidden font-semibold'>
+      <div className='lg:hidden font-semibold z-50'>
         <div className='flex justify-between items-center p-2 md:px-10 '>
         <Link to="/" >
           <img src={logo} className='w-30 h-10'/>

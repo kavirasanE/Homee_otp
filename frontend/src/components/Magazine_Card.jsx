@@ -48,7 +48,7 @@ const Magazine_Card = ({ datas, index }) => {
   }
 
   return (
-    <div className='p-10' key={index}>
+    <div className='lg:p-10 p-1' key={index}>
       <div className='border-2 rounded-md bg-rose-100 '>
       {datas.color ?  <button title=" Click to Bookmark" onClick={handleBookmark}>
       <p>remove bookcolor</p>

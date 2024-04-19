@@ -5,13 +5,13 @@ const MeetWriter = () => {
   return (
     <div className='py-5'>
       
-       <div className='bg-red-200 mx-20 p-5 rounded-2xl pt-10'>
-       <div className='flex justify-between items-center'>
-       <p className='px-10  font-bold text-6xl underline'>MEET THE WRITER</p>
-       <img src={magazine} className='w-80 h-80'/>
+       <div className='bg-red-200 lg:mx-20 mx-2 p-5 rounded-2xl lg:pt-10'>
+       <div className='flex flex-col lg:flex-row justify-between items-center'>
+       <p className='lg:px-10  font-bold lg:text-6xl text-xl py-10 underline'>MEET THE WRITER</p>
+       <img src={magazine} className='w-80 h-80 mb-5'/>
        </div>
-       <FaQuoteLeft className='text-7xl '/>
-       <p className='text-justify px-10 my-5'>
+       <FaQuoteLeft className='lg:text-7xl text-4xl'/>
+       <p className='text-justify lg:px-10 my-5'>
        Absolutely, crafting a "Meet the Writer" page is a fantastic way to introduce yourself to your audience and give them insight into who you are as a writer. Here's a sample template you could use to structure your page:
 **[Your Name] - Writer**
 
@@ -31,16 +31,7 @@ As a versatile writer, I enjoy exploring a diverse range of topics and genres. W
 
 ### My Philosophy
 
-At the heart of my writing philosophy is a belief in the power of empathy and connection. I strive to create characters and narratives that resonate with readers from all walks of life, inviting them to see the world through different perspectives and find common ground in our shared humanity. In a world that can often feel divided, I see storytelling as a bridge that brings us together, fostering understanding, compassion, and a sense of belonging.
-
-### Get in Touch
-
-Thank you for taking the time to visit my website and learn more about me and my work. Whether you're a fellow writer, a reader looking for your next favorite book, or someone curious about the writing process, I'd love to hear from you! Feel free to [contact me](#) with any questions, comments, or collaboration inquiries. Let's embark on this literary journey together!
-
----
-
-Feel free to personalize and expand upon this template to better reflect your own voice, experiences, and writing style. Good luck with your "Meet the Writer" page!
-       </p>
+At the heart of my writing philosophy is a belief in the power of empathy and connection. I strive to create characters and narratives that resonate with readers from all walks of life, inviting them to see the world through different perspectives and find common ground in our shared humanity. In a world that can often feel divided, I see storytelling as a bridge that brings us together, fostering understanding, compassion, and a sense of belonging.</p>
        </div>
     </div>
   )

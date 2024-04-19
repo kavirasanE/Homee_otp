@@ -53,11 +53,11 @@ const Favourites = () => {
 
     return (
         <div>
-            <div>
+            <div className='text-lg font-semibold p-3'>
                 <Link className='' to='/'>Back </Link>
 
             </div>
-            <div className='grid grid-cols-3'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {favourite.map((datas, index) => (
                     <Magazine_Card datas={datas} index={index} />
 
@@ -76,9 +76,9 @@ const Favourites = () => {
                
             </div> */}
 
-            <div>
+            {/* <div>
                 <button onClick={handlePayment} className='p-2 border-2 border-black '>check payment</button>
-            </div>
+            </div> */}
         </div>
     )
 }
