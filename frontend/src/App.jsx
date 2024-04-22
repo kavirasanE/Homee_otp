@@ -16,7 +16,7 @@ const App = () => {
    <>
     <BrowserRouter>
     <div className='bg-blue-200 flex lg:flex-row flex-col lg:justify-between lg:items-center font-bold px-2 lg:px-10 py-3'>
-      <p>24/7 Prayer HelpLine : 3874973649 <span className='lg:px-4'> Email:Charity@gamil.com</span></p>
+      <p> ஜெப உதவிக்கு : <a href='tel-94430 68599' className='underline'>94430 68599</a> <span className='lg:px-4'>  Email:<a href='mailto:Charity@gamil.com' className='underline'>Charity@gamil.com</a></span></p>
       <p className='flex gap-2 pt-2'>
       <span>Language</span>
         <span>Subscribe</span>

@@ -2,13 +2,43 @@ import React from 'react'
 
 const ContactUsModal = ({setOpenContact}) => {
 
-//     User
 
+
+    const [loading, setLoading] = useState(false)
+
+    const emailRef = useRef();
+    const nameRef = useRef();
+    const messageREf = useRef();
+    useEffect(() => {
+        emailjs.init("vjazUY8mUI25kTAFy"), [];
+    })
+    const handlesub = async () => {
+        const serviceID = "service_auo3u9i";
+        const templeteID = "template_paoef4c";
+        try {
+            setLoading(true);
+            await emailjs.send(serviceID, templeteID, {
+                name: nameRef.current.value,
+                recipient: emailRef.current.value,
+                message: messageREf.current.value
+            });
+            alert("email sent suceessfully")
+        }
+        catch (err) {
+            console.log(err)
+        } finally {
+            setLoading(false)
+        }
+    }
+// User
 // name: "kavirasan",
 // from_name: "john",
 // message: "heloo",
 // reply_to: "aruputha manna",
 // recipient: "onone",
+
+
+     
   return (
     <>
 

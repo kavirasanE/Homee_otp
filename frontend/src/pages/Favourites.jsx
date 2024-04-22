@@ -47,10 +47,6 @@ const Favourites = () => {
         rzpl.open();
     }
 
-
-
-
-
     return (
         <div>
             <div className='text-lg font-semibold p-3'>

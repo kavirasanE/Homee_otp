@@ -63,7 +63,7 @@ const Magazine_Card = ({ datas, index }) => {
        
         <div className='flex flex-col justify-start px-4  py-2 items-center '>
           <p className='font-bold text-xl text-start text-nowrap '>{datas.Title}</p>
-          <p className='font-semibold text-xl text-start '> {datas.Year}</p>
+          <p className='font-semibold text-xl text-start '> {datas.Month} - {datas.Year}</p>
           {/* <p className='w-10 h-10  pl-10 cursor-pointer hover:scale-75' > */}
           {/* </p> */}
         </div>

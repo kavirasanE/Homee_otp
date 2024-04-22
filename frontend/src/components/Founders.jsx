@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
-import charity from "../assets/charity.jpg"
+import Founder1 from "../assets/Founder1.png"
+import Founder2 from "../assets/Founder2.png"
 import { useDispatch, useSelector } from 'react-redux'
 import { increment } from '../redux/FavouriteSlice'
 import emailjs from "@emailjs/browser";
@@ -50,7 +51,7 @@ const Founders = () => {
 
             <div className='flex lg:flex-row flex-col py-2 justify-center items-center'>
 
-                <img src={charity} className='w-1/2 lg:p-20' />
+                <img src={Founder1} className='w-1/2 lg:p-20' />
                 <div className='py-10 text-justify lg:pr-10 px-2 flex flex-col gap-4'>
                     <p>In the heart of a bustling community, amidst the echoes of hymns and prayers, stands a figure whose presence embodies the very essence of faith and resilience – the founder of a cherished church. Revered by many and known for his unwavering commitment to serving both God and humanity, the founder's journey is a testament to the transformative power of belief and dedication.</p>
 
@@ -62,7 +63,7 @@ const Founders = () => {
                 </div>
             </div>
             <div className='flex lg:flex-row-reverse flex-col py-2 justify-center items-center'>
-                <img src={charity} className='w-1/2 lg:p-20' />
+                <img src={Founder2} className='w-1/2 lg:p-20' />
                 <div className='py-10 text-justify lg:pl-10 px-2 flex flex-col gap-4'>
                     <p>Fuelled by a burning desire to spread the message of love and redemption, the founder embarked on a mission to establish a place of worship – a sanctuary where believers could gather to seek solace, find community, and nurture their spiritual growth. With unwavering determination and a vision that transcended boundaries, he laid the foundation for what would become a beacon of hope in the hearts of many.</p>
 
@@ -76,7 +77,7 @@ const Founders = () => {
 
             </div>
 
-            <div className='flex lg:flex-row flex-col py-2 justify-center items-center'>
+            {/* <div className='flex lg:flex-row flex-col py-2 justify-center items-center'>
 
                 <img src={charity} className='w-1/2 lg:p-20' />
                 <div className='py-10 text-justify lg:pr-10 px-2 flex flex-col gap-4'>
@@ -88,7 +89,7 @@ const Founders = () => {
 
 
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
