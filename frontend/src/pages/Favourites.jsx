@@ -50,15 +50,21 @@ const Favourites = () => {
     return (
         <div>
             <div className='text-lg font-semibold p-3'>
-                <Link className='' to='/'>Back </Link>
-
+                <Link className=' border-2 bg-rose-400 p-1 px-10 font-bold rounded-md' to='/'> Back </Link>
             </div>
+            {favourite.length ==0 ? 
+            
+            <div className='text-center items-center flex justify-center py-10'>
+            <p className='w-[500px] flex items-center justify-center bg-rose-200 shadow-xl h-96 shadow-rose-950 font-bold text-xl'>No Bookmarks found !!!!!!!</p>
+            </div>  : 
+            
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {favourite.map((datas, index) => (
                     <Magazine_Card datas={datas} index={index} />
 
                 ))}
             </div>
+            }
             {/* {magazineId.map((mag) => (
                     mag.id === contextData.id 
             ))

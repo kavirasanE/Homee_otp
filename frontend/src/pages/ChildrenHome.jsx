@@ -14,8 +14,8 @@ const ChildrenHome = () => {
   const Childrenshome =[ch1,ch2,ch3,ch4,ch5,ch6,ch7];
   return (
     <div>
-    <div className='bg-slate-500 h-48 text-white'>
-        <p className='text-4xl font-bold px-5 pt-20 text-start'>Children's Home</p>
+    <div className='bg-slate-500 h-24 text-white'>
+        <p className='text-4xl font-bold px-5 py-5 text-start uppercase'>Children's Home</p>
     </div>
     {/* <div className='flex justify-center py-5'>
     <img src={magazine} className='w-[800px] h-80 rounded-2xl'/>

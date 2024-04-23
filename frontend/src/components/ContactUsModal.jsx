@@ -1,9 +1,5 @@
-import React from 'react'
-
+import React,{useState ,useRef,useEffect} from 'react'
 const ContactUsModal = ({setOpenContact}) => {
-
-
-
     const [loading, setLoading] = useState(false)
 
     const emailRef = useRef();

@@ -32,17 +32,43 @@ const Navbar = () => {
     <>
 
      <div className='hidden p-3 lg:flex flex-row  justify-between items-center bg-gray-200 '>
-        <Link>
-          <img src={logo} className='w-40 h-20' />
+        <Link to="/">
+          <img src={logo} className='w-40 h-20'  />
         </Link>
         <div className='flex flex-row  justify-between items-center gap-4 px-10 font-semibold text-xl'>
-          <p className='border-r-2 border-black/50 px-2 cursor-pointer flex items-center' onMouseEnter={() => setOpenmenu(!openmenu)} onMouseLeave={() => setOpenmenu(!openmenu)}><span>Watch</span>
+        <div>
+
+        
+        <p className='hover:border-b-2
+           border-black/50 w-full text-center
+           p-2 pl-10 cursor-pointer flex justify-center items-center '
+                onMouseEnter={() => setOpenMinsteries(true)}
+                onMouseLeave={() => setOpenMinsteries(false)}> Our Ministiries
+                <RiArrowDropDownLine size={30}
+                  className={` ${openMinsteries ? "rotate-180 transition-transform duration-500 ease-in-out"
+                    : "rotate-360 transition-transform duration-500 ease-in-out"}`} />
+              </p>
+              {openMinsteries &&
+                <div className='flex flex-col absolute bg-gray-200 border-2 justify-center items-center'
+                  onMouseEnter={() => setOpenMinsteries(true)}
+                  onMouseLeave={() => setOpenMinsteries(false)}>
+                  <Link  to="chruchActivites" className='hover:border-b-2
+           border-black/50 w-60 text-center py-2 cursor-pointer'>Chruch Activities</Link>
+                  <Link to="TrustActivities" className='hover:border-b-2
+           border-black/50 w-full text-center cursor-pointer py-2' >Trust Activities</Link>
+                  <Link to="Childrenshome" className='hover:border-b-2
+           border-black/50 w-full text-center cursor-pointer py-2' >Children's Home</Link>
+                </div>
+              }
+              </div>
+          {/* <p className='border-r-2 border-black/50 px-2 cursor-pointer flex items-center'
+           onMouseEnter={() => setOpenmenu(!openmenu)} onMouseLeave={() => setOpenmenu(!openmenu)}><span>Watch</span>
             <RiArrowDropDownLine size={30}
               className={` ${openmenu ? "rotate-180 transition-transform duration-500 ease-in-out"
-                : "rotate-360 transition-transform duration-500 ease-in-out"}`} /></p>
-          <p className='border-r-2 border-black/50 pr-4 cursor-pointer flex items-center'>Testimonies
+                : "rotate-360 transition-transform duration-500 ease-in-out"}`} /></p> */}
+          {/* <p className='border-r-2 border-black/50 pr-4 cursor-pointer flex items-center'>Testimonies
           </p>
-          <p className='border-r-2 border-black/50 pr-2 cursor-pointer flex items-center'>Aruputha Manna</p>
+          <p className='border-r-2 border-black/50 pr-2 cursor-pointer flex items-center'>Aruputha Manna</p> */}
           <p className='border-r-2 border-black/50 px-2 cursor-pointer flex items-center'
             onMouseEnter={() => setOpenAboutmenu(true)}
             onMouseLeave={() => setOpenAboutmenu(false)}>About Us <RiArrowDropDownLine size={30}
@@ -61,28 +87,6 @@ const Navbar = () => {
               <Link  to="meetwriter" className='hover:border-b-2
            border-black/50 w-full text-center
            p-2 pb-4'>Meet the Writer</Link>
-              <p className='hover:border-b-2
-           border-black/50 w-full text-center
-           p-2 pl-10 cursor-pointer flex justify-center items-center '
-                onMouseEnter={() => setOpenMinsteries(true)}
-                onMouseLeave={() => setOpenMinsteries(false)}> Our Ministiries
-                <RiArrowDropDownLine size={30}
-                  className={` ${openMinsteries ? "rotate-180 transition-transform duration-500 ease-in-out"
-                    : "rotate-360 transition-transform duration-500 ease-in-out"}`} />
-              </p>
-              {openMinsteries &&
-                <div className='flex flex-col  border-2 justify-center items-center'
-                  onMouseEnter={() => setOpenMinsteries(true)}
-                  onMouseLeave={() => setOpenMinsteries(false)}>
-                  <Link  to="chruchActivites" className='hover:border-b-2
-           border-black/50 w-60 text-center py-2 cursor-pointer'>Chruch Activities</Link>
-                  <Link to="TrustActivities" className='hover:border-b-2
-           border-black/50 w-full text-center cursor-pointer py-2' >Trust Activities</Link>
-                  <Link to="Childrenshome" className='hover:border-b-2
-           border-black/50 w-full text-center cursor-pointer py-2' >Children's Home</Link>
-                </div>
-              }
-
             </div>
           }
           {counter > 0 &&
@@ -93,7 +97,6 @@ const Navbar = () => {
           </Link>
           <button className='bg-rose-600 text-white subpixel-antialiased px-6 p-1 rounded-md'>GIVE</button>
         </div>
-
       </div> 
 
       <div className='lg:hidden font-semibold z-50'>
@@ -101,28 +104,19 @@ const Navbar = () => {
         <Link to="/" >
           <img src={logo} className='w-30 h-10' onClick={() => setOpenHamburgerMenu(true)}/>
         </Link>
-         {openHamburgerMenu ? <GiHamburgerMenu className='text-xl' onClick={() => setOpenHamburgerMenu(false)}/> : 
-          <IoCloseSharp  className='text-xl' onClick={() => setOpenHamburgerMenu(true)}/> }
+         {openHamburgerMenu ? <GiHamburgerMenu className='text-4xl mx-5' onClick={() => setOpenHamburgerMenu(false)}/> : 
+          <IoCloseSharp  className='text-4xl mx-5' onClick={() => setOpenHamburgerMenu(true)}/> }
         </div>
         {!openHamburgerMenu && 
           <div className='flex flex-col  items-center gap-4 transition-transform duration-500 p-5  rounded-md'>
-            <p className='flex justify-center items-center' onClick={() => setOpenmenu(!openmenu)} >
+            {/* <p className='flex justify-center items-center' onClick={() => setOpenmenu(!openmenu)} >
         
               <span>Watch</span>
               <RiArrowDropDownLine size={30} className={` ${openmenu ? "rotate-180 transition-transform duration-500 ease-in-out" : "rotate-360 transition-transform duration-500 ease-in-out"}`} />
-            </p>
-            <p onClick={() => setOpenHamburgerMenu(true)}>Testimonies</p>
-            <p onClick={() => setOpenHamburgerMenu(true)}>Aruputha Manna</p>
-            <p onClick={() => setOpenAboutmenu(!openAboutmenu)} className='flex justify-center items-center' >
-              About Us
-              <RiArrowDropDownLine size={30} className={` ${openAboutmenu ? "rotate-180 transition-transform duration-500 ease-in-out" : "rotate-360 transition-transform duration-500 ease-in-out"}`} />
-            </p>
-            {openAboutmenu &&
-              <div className='flex flex-col gap-4 justify-center items-center'>
-                <button onClick={() => { setOpenContact(true); setOpenHamburgerMenu(true)}}>Contact Us</button>
-                <Link to="/founder" onClick={() => setOpenHamburgerMenu(true)}>Founder</Link>
-                <Link to="meetwriter" onClick={() => setOpenHamburgerMenu(true)}>Meet the Writer</Link>
-                <p onClick={() =>{ setOpenMinsteries(!openMinsteries)}} className='flex  justify-center items-center'>
+            </p> */}
+            {/* <p onClick={() => setOpenHamburgerMenu(true)}>Testimonies</p>
+            <p onClick={() => setOpenHamburgerMenu(true)}>Aruputha Manna</p> */}
+            <p onClick={() =>{ setOpenMinsteries(!openMinsteries)}} className='flex  justify-center items-center'>
                   Our Ministiries
                   <RiArrowDropDownLine size={30} className={` ${openMinsteries ? "rotate-180 transition-transform duration-500 ease-in-out" : "rotate-360 transition-transform duration-500 ease-in-out"}`} />
                 </p>
@@ -133,20 +127,29 @@ const Navbar = () => {
                     <Link to="Childrenshome" onClick={() => setOpenHamburgerMenu(true)}>Children's Home</Link>
                   </div>
                 }
+            <p onClick={() => setOpenAboutmenu(!openAboutmenu)} className='flex justify-center items-center' >
+              About Us
+              <RiArrowDropDownLine size={30} className={` ${openAboutmenu ? "rotate-180 transition-transform duration-500 ease-in-out" : "rotate-360 transition-transform duration-500 ease-in-out"}`} />
+            </p>
+            {openAboutmenu &&
+              <div className='flex flex-col gap-4 justify-center items-center'>
+                <button onClick={() => { setOpenContact(true); setOpenHamburgerMenu(true)}}>Contact Us</button>
+                <Link to="/founder" onClick={() => setOpenHamburgerMenu(true)}>Founder</Link>
+                <Link to="meetwriter" onClick={() => setOpenHamburgerMenu(true)}>Meet the Writer</Link>
+               
               </div>
             }
-            {counter > 0 &&
-              <p className='bg-gray-200 text-black text-sm rounded-full absolute p-1 text-center w-6 h-6 ml-8 bottom-24'>{counter}</p>
+            
+            <Link title="Bookmarks" to="/fav" className='relative'>
+              {counter > 0 &&
+              <p className='bg-gray-200 text-black text-sm rounded-full  p-1 text-center w-6 h-6 '>{counter}</p>
             }
-            <Link title="Bookmarks" to="/fav">
-              <LiaCrossSolid size={40} />
+              <LiaCrossSolid size={40}  />
             </Link>
             <button className='bg-rose-600 text-white subpixel-antialiased px-10 p-1 rounded-md font-semibold'>GIVE</button>
           </div>
         }
       </div>
-
-
       {openContact &&
         <div className='absolute top-0 bg-black/40 w-screen'>
           <ContactUsModal setOpenContact={setOpenContact} />

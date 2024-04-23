@@ -32,6 +32,14 @@ const ChruchActivities = () => {
       {/* <div className='flex justify-center py-5'>
     <img src={magazine} className='w-[800px] h-80 rounded-2xl'/>
     </div> */}
+
+    <p className='text-3xl font-bold py-3 text-center underline'>Image Gallery</p>
+        <Marquee pauseOnHover pauseOnClick className='py-5'>
+      {chruchActivites.map((data) => (
+          <Marquees data={data} />
+
+      ))}
+        </Marquee>
     <div class="p-5 text-justify">
     <p class="mb-4">
         The <strong class="text-black-800 ">Church of Praise</strong>, founded under the inspired leadership of <strong class="text-red-800 text-xl ">Bishop Dr. R. Ashokan</strong>, serves as a beacon of spiritual solace, guiding countless individuals on their journey towards <strong class="text-black-800 ">God</strong>. With a profound commitment to spiritual enlightenment, <strong class="text-red-800 text-xl ">Bishop Dr. R. Ashokan</strong> established this sanctuary of faith to nurture souls and deepen their connection with the divine.
@@ -49,13 +57,7 @@ const ChruchActivities = () => {
         The impact of the <strong class="text-black-800 ">Church of Praise</strong> extends far beyond its physical walls, touching the hearts and lives of individuals from all walks of life. It stands as a testament to <strong class="text-red-800 text-xl ">Bishop Dr. R. Ashokan</strong>'s vision and dedication, offering hope, guidance, and spiritual renewal to all who seek solace in its embrace.
     </p>
 </div>
-<p className='text-3xl font-bold py-3 text-center underline'>Image Gallery</p>
-        <Marquee pauseOnHover pauseOnClick className='py-5'>
-      {chruchActivites.map((data) => (
-          <Marquees data={data} />
 
-      ))}
-        </Marquee>
     </div>
   )
 }
