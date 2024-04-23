@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route ,Routes} from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import DataProvider from './context/DataProvider'
 import Favourites from './pages/Favourites'
@@ -11,33 +11,30 @@ import MeetWriter from './pages/MeetWriter'
 import TrustActivities from './pages/TrustActivities'
 import ChruchActivities from './pages/ChruchActivities'
 import ChildrenHome from './pages/ChildrenHome'
+import { FaWhatsapp } from "react-icons/fa6";
 const App = () => {
   return (
-   <>
-    <BrowserRouter>
-    <div className='bg-blue-200 flex lg:flex-row flex-col lg:justify-between lg:items-center font-bold px-2 lg:px-10 py-3'>
-      <p> ஜெப உதவிக்கு : <a href='tel-9443068599' className='underline'>9443068599</a> <span className='lg:px-4'>  Email:<a href='mailto:Charity@gamil.com' className='underline'>Charity@gamil.com</a></span></p>
-      <p className='flex gap-2 pt-2'>
-      <span>Language</span>
-        <span>Subscribe</span>
-      </p>
-    </div>
-    <div>
-        <Navbar/>
-    </div>
-      <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/fav' element={<Favourites/>}/>
-        <Route path='/page' element={<Page/>}/>
-        <Route path='/founder' element={<OurFounder/>}/>
-        <Route path='/meetwriter' element={<MeetWriter/>}/>
-        <Route path='/TrustActivities' element={<TrustActivities/>}/>
-        <Route path='/chruchActivites' element={<ChruchActivities/>}/>
-        <Route path='/Childrenshome' element={<ChildrenHome/>}/>
-      </Routes>
-      <Footer/>
-    </BrowserRouter>
-   </>
+    <>
+      <BrowserRouter>
+        <a className='fixed md:hidden bottom-5 right-5 z-50' href='whatsapp://send?phone=7397228076'>
+          <FaWhatsapp   size={30} className=' bg-green-500 text-white rounded-lg'/>
+        </a>
+        <div>
+          <Navbar />
+        </div>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/fav' element={<Favourites />} />
+          <Route path='/page' element={<Page />} />
+          <Route path='/founder' element={<OurFounder />} />
+          <Route path='/meetwriter' element={<MeetWriter />} />
+          <Route path='/TrustActivities' element={<TrustActivities />} />
+          <Route path='/chruchActivites' element={<ChruchActivities />} />
+          <Route path='/Childrenshome' element={<ChildrenHome />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </>
   )
 }
 

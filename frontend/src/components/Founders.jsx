@@ -82,12 +82,8 @@ const Founders = () => {
                 <img src={charity} className='w-1/2 lg:p-20' />
                 <div className='py-10 text-justify lg:pr-10 px-2 flex flex-col gap-4'>
                     <p>In the heart of a bustling community, amidst the echoes of hymns and prayers, stands a figure whose presence embodies the very essence of faith and resilience – the founder of a cherished church. Revered by many and known for his unwavering commitment to serving both God and humanity, the founder's journey is a testament to the transformative power of belief and dedication.</p>
-
                     <p>Born into humble beginnings, the founder's early years were marked by adversity and hardship. Yet, even in the face of adversity, his unwavering faith remained steadfast. It was this faith that guided him through the darkest of times, instilling in him a profound sense of purpose and calling.</p>
-
                     <p>As he matured, the founder's passion for spirituality blossomed, leading him to embark on a journey of self-discovery and enlightenment. Through prayer, study, and reflection, he found solace in the teachings of the Bible, drawing inspiration from the stories of prophets and disciples who had walked before him.</p>
-
-
                 </div>
             </div> */}
         </div>

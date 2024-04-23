@@ -73,7 +73,9 @@ const ImageSlider = () => {
             }
         }, 5000)
         return () => clearInterval(interval)
-    })
+    });
+
+
     return (
         <div>
          
@@ -84,11 +86,11 @@ const ImageSlider = () => {
 
             />
             {imagehover &&
-                <div onMouseEnter={() => { setImageHover(true) }} >
+                <div onMouseEnter={() => { setImageHover(true) }} onClick={() => setImageHover(!imagehover)} >
                     <SlArrowLeft size={40} className='absolute 
-    p-2 top-[300px] left-5 cursor-pointer bg-white/30 rounded-full ' onClick={handlePrev} />
+    p-2 top-[350px] left-5 cursor-pointer bg-white/30 rounded-full ' onClick={handlePrev} />
                     <SlArrowLeft size={40} className='rotate-180  absolute
-    p-2 top-[300px]  right-5 cursor-pointer bg-white/30 rounded-full' onClick={handleNext} />
+    p-2 top-[350px]  right-5 cursor-pointer bg-white/30 rounded-full' onClick={handleNext} />
                 </div>
             }
 
