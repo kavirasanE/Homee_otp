@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import toast from "react-hot-toast"
 
 const ContactUsModal = ({ setOpenContact }) => {
   const [loading, setLoading] = useState(false);
@@ -37,7 +38,8 @@ const ContactUsModal = ({ setOpenContact }) => {
         email: values.email,
         message: `${values.message} Mobile Number: ${values.mobile} ${sub}`,
       });
-      alert("Email sent successfully");
+      // alert("Email sent successfully");
+      toast.success("Email sent successfully")
     } catch (err) {
       console.log(err);
     } finally {

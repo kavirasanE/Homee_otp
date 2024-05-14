@@ -5,7 +5,7 @@ import React, {
   useReducer,
   useState,
 } from "react";
-import logo from "../assets/logo.png";
+import logo1 from "../assets/logo1.png";
 import { LiaCrossSolid } from "react-icons/lia";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { Link, useSearchParams } from "react-router-dom";
@@ -68,7 +68,6 @@ const Navbar = () => {
 
   return (
     <>
-      <div></div>
       <div className="bg-blue-200 flex lg:flex-row flex-col lg:justify-between lg:items-center font-bold px-2 lg:px-10 py-3">
         <p>
           {" "}
@@ -122,9 +121,9 @@ const Navbar = () => {
           </span>
         </p>
       </div>
-      <div className="hidden p-3 lg:flex flex-row  justify-between items-center bg-gray-200 ">
+      <div className="hidden  lg:flex flex-row  justify-between items-center bg-gray-200 ">
         <Link to="/">
-          <img src={logo} className="w-40 h-10" />
+          <img src={logo1} className="w-48 h-20 " />
         </Link>
         <div className="flex flex-row  justify-between items-center gap-4 px-10 font-semibold text-xl">
           <div>
@@ -239,11 +238,12 @@ p-2 pl-10 cursor-pointer flex justify-center items-center "
           </div>
 
           {counter > 0 && (
-            <p className="absolute right-40 z-10 mb-10 bg-white rounded-full px-2 p-0.5 text-center text-sm font-bold ">
+            <p className="absolute right-48 z-10 mb-10 bg-red-500 rounded-full px-2 p-0.5 text-center text-sm font-bold ">
               {counter}
             </p>
           )}
           <Link title="Bookmarks" className="pr-4" to="/fav">
+          
             <LiaCrossSolid
               size={20}
               className=" rounded-full  w-10 h-10  cursor-pointer hover:scale-90 duration-150 translate-x-2 transition-transform ease-in-out"
@@ -262,7 +262,7 @@ p-2 pl-10 cursor-pointer flex justify-center items-center "
         <div className="flex justify-between items-center p-2 md:px-10 ">
           <Link to="/">
             <img
-              src={logo}
+              src={logo1}
               className="w-30 h-10"
               onClick={() => setOpenHamburgerMenu(true)}
             />
