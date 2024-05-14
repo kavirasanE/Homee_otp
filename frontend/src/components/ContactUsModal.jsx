@@ -40,8 +40,10 @@ const ContactUsModal = ({ setOpenContact }) => {
     return (
         <>
             <div className='bg-white  z-10 mx-2 lg:mx-48 my-10  rounded-xl' >
+           
                 <p className='font-bold  pt-2 text-2xl flex justify-end px-10 cursor-pointer' onClick={() => setOpenContact(false)}>X</p>
                 <form class="max-w-sm  mx-auto pb-5 px-2">
+                <p className='font-bold text-2xl text-center'>Contact Us !!!!</p>
                     <p className='font-bold text-lg  text-end py-4 text-rose-500  italic'>"It is more blessed to give than to receive" --  Acts 20:35 (NIV)</p>
                     <div class="mb-5">
                         <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>

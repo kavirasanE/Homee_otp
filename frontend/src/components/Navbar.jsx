@@ -72,7 +72,7 @@ const Navbar = () => {
       </div>
       <div className='hidden p-3 lg:flex flex-row  justify-between items-center bg-gray-200 '>
         <Link to="/">
-          <img src={logo} className='w-40 h-20' />
+          <img src={logo} className='w-40 h-10' />
         </Link>
         <div className='flex flex-row  justify-between items-center gap-4 px-10 font-semibold text-xl'>
           <div>
@@ -114,7 +114,7 @@ const Navbar = () => {
               className={` ${openAboutmenu ? "rotate-180 transition-transform duration-500 ease-in-out"
                 : "rotate-360 transition-transform duration-500 ease-in-out"}`} /></p>
           {openAboutmenu &&
-            <div className='absolute  w-60 top-[115px] right-44  font-semibold text-xl 
+            <div className='absolute  w-60 top-[115px] right-48  font-semibold text- 
              bg-gray-200 lg:flex flex-col justify-start items-center text-nowrap  pt-4'
               onMouseEnter={() => setOpenAboutmenu(true)}
               onMouseLeave={() => setOpenAboutmenu(false)}>
@@ -134,7 +134,7 @@ const Navbar = () => {
           <Link title="Bookmarks" className='pr-4' to="/fav">
             <LiaCrossSolid size={20} className=' rounded-full  w-10 h-10  cursor-pointer hover:scale-90 duration-150 translate-x-2 transition-transform ease-in-out' />
           </Link>
-          <button className='bg-rose-600 text-white subpixel-antialiased px-6 p-1 rounded-md' onClick={handlePayment}>GIVE</button>
+          <button className='bg-rose-600 text-white text-sm subpixel-antialiased px-6 p-1 rounded-md' onClick={handlePayment}>DONATE US</button>
         </div>
       </div>
 
@@ -185,7 +185,7 @@ const Navbar = () => {
               }
               <LiaCrossSolid size={40} />
             </Link>
-            <button className='bg-rose-600 text-white subpixel-antialiased px-10 p-1 rounded-md font-semibold'>GIVE</button>
+            <button className='bg-rose-600 text-white subpixel-antialiased px-10 p-1 rounded-md font-semibold'>DONATE US</button>
           </div>
         }
       </div>
