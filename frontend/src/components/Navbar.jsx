@@ -17,8 +17,12 @@ import ContactUsModal from "./ContactUsModal";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import Axios from "axios";
+import Translatore from "./Translatore";
+import { Button, Modal } from "flowbite-react";
+import { HiOutlineExclamationCircle } from "react-icons/hi";
 const Navbar = () => {
   // const { magazineId } = useContext(DataContext);
+  const [openModal, setOpenModal] = useState(false);
   const [state, dispatch] = useReducer(FavouriteReducer, InitialState);
   const counter = useSelector((state) => state.favourites.value);
   useEffect(() => {
@@ -68,7 +72,7 @@ const Navbar = () => {
       <div className="bg-blue-200 flex lg:flex-row flex-col lg:justify-between lg:items-center font-bold px-2 lg:px-10 py-3">
         <p>
           {" "}
-          ஜெப உதவிக்கு :{" "}
+          Prayer Helpline:{" "}
           <a href="tel:9443068599" className="underline">
             9443068599
           </a>{" "}
@@ -81,7 +85,35 @@ const Navbar = () => {
           </span>
         </p>
         <p className="flex gap-2 pt-2">
-          <span>Language</span>
+          <span onClick={() => setOpenModal(true)} className="underline cursor-pointer">Language</span>
+          <div className="absolute w-80" >
+            <Modal
+              show={openModal}
+              onClose={() => setOpenModal(false)}
+              popup
+            >
+              <Modal.Header />
+              <Modal.Body>
+                
+                <div className="flex justify-center items-center gap-4" >
+
+                  <Translatore openModal= {openModal}/>
+                  </div>
+        
+               <div className="flex flex-roe justify-center p-2">
+
+                  <Button
+                      className="bg-red-900"
+                      onClick={() => setOpenModal(false)}
+                    >
+                      close
+                    </Button>
+               </div>
+              </Modal.Body>
+            </Modal>
+          </div>
+
+          {/* <Translatore/> */}
           <span
             onClick={() => setOpenContact(true)}
             className="cursor-pointer underline"
@@ -97,7 +129,7 @@ const Navbar = () => {
         <div className="flex flex-row  justify-between items-center gap-4 px-10 font-semibold text-xl">
           <div>
             <p
-              className="hover:border-b-2
+              className="
            border-black/50 w-full text-center
            p-2 pl-10 cursor-pointer flex justify-center items-center "
               onMouseEnter={() => setOpenMinsteries(true)}
@@ -116,7 +148,7 @@ const Navbar = () => {
             </p>
             {openMinsteries && (
               <div
-                className="flex flex-col absolute bg-gray-200 border-2 justify-center items-center"
+                className="flex flex-col absolute bg-gray-200 border-2 px-4 justify-center items-center"
                 onMouseEnter={() => setOpenMinsteries(true)}
                 onMouseLeave={() => setOpenMinsteries(false)}
               >
@@ -154,7 +186,7 @@ const Navbar = () => {
           <p className='border-r-2 border-black/50 pr-2 cursor-pointer flex items-center'>Aruputha Manna</p> */}
           <div>
             <p
-              className="hover:border-b-2
+              className="
 border-black/50 w-full text-center
 p-2 pl-10 cursor-pointer flex justify-center items-center "
               onMouseEnter={() => setOpenAboutmenu(true)}
@@ -173,39 +205,39 @@ p-2 pl-10 cursor-pointer flex justify-center items-center "
             </p>
             {openAboutmenu && (
               <div
-                className="flex flex-col absolute bg-gray-200 border-2 justify-center items-center"
+                className="flex flex-col absolute bg-gray-200 border-2 px-4 justify-center items-center"
                 onMouseEnter={() => setOpenAboutmenu(true)}
                 onMouseLeave={() => setOpenAboutmenu(false)}
               >
                 <button
-                className="hover:border-b-2
+                  className="hover:border-b-2
            border-black/50 w-full p-2"
-                onClick={() => {
-                  setOpenContact(true);
-                }}
-              >
-                Contact Us
-              </button>
-              <Link
-                to="/founder"
-                className="hover:border-b-2
+                  onClick={() => {
+                    setOpenContact(true);
+                  }}
+                >
+                  Contact Us
+                </button>
+                <Link
+                  to="/founder"
+                  className="hover:border-b-2
            border-black/50 w-full text-center
             p-2"
-              >
-                Founder
-              </Link>
-              <Link
-                to="meetwriter"
-                className="hover:border-b-2
+                >
+                  Founder
+                </Link>
+                <Link
+                  to="meetwriter"
+                  className="hover:border-b-2
            border-black/50 w-full text-center
            p-2 pb-4"
-              >
-                Meet the Writer
-              </Link>
+                >
+                  Meet the Writer
+                </Link>
               </div>
             )}
           </div>
-         
+
           {counter > 0 && (
             <p className="absolute right-40 z-10 mb-10 bg-white rounded-full px-2 p-0.5 text-center text-sm font-bold ">
               {counter}
@@ -361,8 +393,8 @@ export default Navbar;
 
 // About -- Countact us , Founder,  Ministiries -- chruch , trust , Childrens Home, Meet the writer
 
-
-{/* <p
+{
+  /* <p
 className="border-r-2 border-black/50 px-2 cursor-pointer flex items-center"
 onMouseEnter={() => setOpenAboutmenu(true)}
 onMouseLeave={() => setOpenAboutmenu(false)}
@@ -410,4 +442,5 @@ p-2 pb-4"
     Meet the Writer
   </Link>
 </div>
-)} */}
+)} */
+}
