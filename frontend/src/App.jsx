@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useEffect} from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import DataProvider from './context/DataProvider'
@@ -13,11 +13,12 @@ import ChruchActivities from './pages/ChruchActivities'
 import ChildrenHome from './pages/ChildrenHome'
 import { FaWhatsapp } from "react-icons/fa6";
 const App = () => {
+
   return (
-    <>
-      <BrowserRouter>
-        <a className='fixed md:hidden bottom-5 right-5 z-50' href='whatsapp://send?phone=7397228076'>
-          <FaWhatsapp   size={30} className=' bg-green-500 text-white rounded-lg'/>
+    <div>
+        <BrowserRouter>
+        <a className='fixed  bottom-5 right-5 z-50' href='whatsapp://send?phone=7397228076'>
+          <FaWhatsapp  size={50} className=' bg-green-500 text-white rounded-lg'/>
         </a>
         <div>
           <Navbar />
@@ -34,7 +35,7 @@ const App = () => {
         </Routes>
         <Footer />
       </BrowserRouter>
-    </>
+    </div>
   )
 }
 
