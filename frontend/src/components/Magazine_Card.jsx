@@ -68,8 +68,8 @@ const Magazine_Card = ({ datas, index }) => {
           {/* </p> */}
         </div>
         <div className='p-3 flex '>
-          <img src={magazine} className='h-60 shadow-black shadow-lg' />
-          <div className='py-10 flex flex-col justify-between items-center'>
+          <img src="https://drive.google.com/thumbnail?id=1y41BgI_WQWwciDGJ-xVYcmSBOt7fVGlZ"/>
+          <div className='px-5 flex flex-col justify-center items-start gap-10'>
             <p className='text-sm font-bold text-nowrap'><span className='font-semibold text-black/50  text-md'>Features :<br/></span>A Sure Foundation</p>
             {/* <p className='text-sm'><span className='font-semibold text-md'>Articles : </span> Dare to Dream</p> */}
             <p className='text-sm font-bold text-nowrap'><span className='font-bold text-black/50 text-md'>Writer: <br/></span>{datas.Writer}</p>
