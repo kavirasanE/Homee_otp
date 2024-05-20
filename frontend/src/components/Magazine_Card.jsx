@@ -67,14 +67,15 @@ const Magazine_Card = ({ datas, index }) => {
           {/* <p className='w-10 h-10  pl-10 cursor-pointer hover:scale-75' > */}
           {/* </p> */}
         </div>
-        <div className='flex jusitify-center items-start p-5'>
-          <img src={magazine} className='w-40 shadow-black shadow-lg' />
-          <div className='p-3  flex flex-col gap-4 '>
-            <p className='text-sm'><span className='font-semibold text-md'>Features :</span> A Sure Foundation</p>
-            <p className='text-sm'><span className='font-semibold text-md'>Articles : </span> Dare to Dream</p>
-            <p className='text-sm'><span className='font-semibold text-md'>Meet the Writer</span> {datas.Writer}</p>
+        <div className='p-3 flex '>
+          <img src={magazine} className='h-60 shadow-black shadow-lg' />
+          <div className='py-10 flex flex-col justify-between items-center'>
+            <p className='text-sm font-bold text-nowrap'><span className='font-semibold text-black/50  text-md'>Features :<br/></span>A Sure Foundation</p>
+            {/* <p className='text-sm'><span className='font-semibold text-md'>Articles : </span> Dare to Dream</p> */}
+            <p className='text-sm font-bold text-nowrap'><span className='font-bold text-black/50 text-md'>Writer: <br/></span>{datas.Writer}</p>
           </div>
         </div>
+        
         <div className='flex justify-between items-center px-4 py-6 '>
           <a href={datas.ReadPdf} target='_blank' className='bg-indigo-800 text-white p-1 px-4' >Read Online</a>
           <button className='bg-indigo-800 text-white p-1 px-4'>Download Pdf</button>

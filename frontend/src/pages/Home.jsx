@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
-import Navbar from '../components/Navbar'
-import Magazine_Card from '../components/Magazine_Card'
-import Footer from '../components/Footer'
-import { DataContext } from '../context/DataProvider'
+import React, { useContext, useEffect, useState } from "react";
+import Navbar from "../components/Navbar";
+import Magazine_Card from "../components/Magazine_Card";
+import Footer from "../components/Footer";
+import { DataContext } from "../context/DataProvider";
 
-import ImageSlider from '../components/ImageSlider'
-import Marquee from '../components/Marquees'
+import ImageSlider from "../components/ImageSlider";
+import Marquee from "../components/Marquees";
 const Home = () => {
   // const data = [
   //   {
@@ -115,99 +115,115 @@ const Home = () => {
   // console.log(data);
   //  const {setcontextData} =useContext(DataContext)
 
+  //   const data = [
+  // {
+  //   "id": 0,
+  //       "Year": "2024",
+  //       "Writer": "Priya Ashokan",
+  //       "Title": "Arputha Deva Kirubai",
+  //       "ReadPdf": "https://drive.google.com/file/d/1d95PGiFDpoER2a4Zy4wxJA86VRnBvFS2/view?usp=sharing",
+  //       "Downloadpdf": "https://drive.google.com/file/d/1d95PGiFDpoER2a4Zy4wxJA86VRnBvFS2/view?usp=sharing",
+  //       "Month": "January",
+  //       "Poster": "magazine frontpage photo "
+  // },
+  // {
+  //  "id": 1,
+  //       "Year": "2024",
+  //       "Writer": "Priya Ashokan",
+  //       "Title": "Arputha Deva Kirubai",
+  //       "ReadPdf": "https://drive.google.com/file/d/1P4rRroBRTZDsP7TaB3hjV5hwl6Qa7rkr/view?usp=sharing",
+  //       "Downloadpdf": "https://drive.google.com/file/d/1P4rRroBRTZDsP7TaB3hjV5hwl6Qa7rkr/view?usp=sharing",
+  //       "Month": "February",
+  //       "Poster": "magazine frontpage photo "
+  // },
+  // {
+  //  "id": 2,
+  //       "Year": "2024",
+  //       "Writer": "Priya Ashokan",
+  //       "Title": "Arputha Deva Kirubai",
+  //       "ReadPdf": "https://drive.google.com/file/d/1wLitb-u7aSNkua1wZN7UORsLgv0d4okx/view?usp=sharing",
+  //       "Downloadpdf": "https://drive.google.com/file/d/1wLitb-u7aSNkua1wZN7UORsLgv0d4okx/view?usp=sharing",
+  //       "Month": "March",
+  //       "Poster": "magazin frontpage photo "
+  // },
+  // {
+  // "id": 3,
+  //       "Year": "2024",
+  //       "Writer": "Priya Ashokan",
+  //       "Title": "Arputha Deva Kirubai",
+  //       "ReadPdf": "https://drive.google.com/file/d/1A4ISn4zzWNNFvSo2pyy1SJLyo26yw9Oc/view?usp=sharing",
+  //       "Downloadpdf": "https://drive.google.com/file/d/1A4ISn4zzWNNFvSo2pyy1SJLyo26yw9Oc/view?usp=sharing",
+  //       "Month": "April",
+  //       "Poster": "Image Link"
+  // }
+  // ]
 
-//   const data = [
-// {
-//   "id": 0,
-//       "Year": "2024",
-//       "Writer": "Priya Ashokan",
-//       "Title": "Arputha Deva Kirubai",
-//       "ReadPdf": "https://drive.google.com/file/d/1d95PGiFDpoER2a4Zy4wxJA86VRnBvFS2/view?usp=sharing",
-//       "Downloadpdf": "https://drive.google.com/file/d/1d95PGiFDpoER2a4Zy4wxJA86VRnBvFS2/view?usp=sharing",
-//       "Month": "January",
-//       "Poster": "magazine frontpage photo "
-// },
-// {
-//  "id": 1,
-//       "Year": "2024",
-//       "Writer": "Priya Ashokan",
-//       "Title": "Arputha Deva Kirubai",
-//       "ReadPdf": "https://drive.google.com/file/d/1P4rRroBRTZDsP7TaB3hjV5hwl6Qa7rkr/view?usp=sharing",
-//       "Downloadpdf": "https://drive.google.com/file/d/1P4rRroBRTZDsP7TaB3hjV5hwl6Qa7rkr/view?usp=sharing",
-//       "Month": "February",
-//       "Poster": "magazine frontpage photo "
-// },
-// {
-//  "id": 2,
-//       "Year": "2024",
-//       "Writer": "Priya Ashokan",
-//       "Title": "Arputha Deva Kirubai",
-//       "ReadPdf": "https://drive.google.com/file/d/1wLitb-u7aSNkua1wZN7UORsLgv0d4okx/view?usp=sharing",
-//       "Downloadpdf": "https://drive.google.com/file/d/1wLitb-u7aSNkua1wZN7UORsLgv0d4okx/view?usp=sharing",
-//       "Month": "March",
-//       "Poster": "magazin frontpage photo "
-// },
-// {
-// "id": 3,
-//       "Year": "2024",
-//       "Writer": "Priya Ashokan",
-//       "Title": "Arputha Deva Kirubai",
-//       "ReadPdf": "https://drive.google.com/file/d/1A4ISn4zzWNNFvSo2pyy1SJLyo26yw9Oc/view?usp=sharing",
-//       "Downloadpdf": "https://drive.google.com/file/d/1A4ISn4zzWNNFvSo2pyy1SJLyo26yw9Oc/view?usp=sharing",
-//       "Month": "April",
-//       "Poster": "Image Link"
-// }
-// ]
-
-
-const data = [
-  {
-    "id": 0,
-    "Year": "2024",
-    "Writer": "பிரியா அசோகன்",
-    "Title": "அற்புத தேவ கிருபை",
-    "ReadPdf": "https://drive.google.com/file/d/1d95PGiFDpoER2a4Zy4wxJA86VRnBvFS2/view?usp=sharing",
-    "Downloadpdf": "https://drive.google.com/file/d/1d95PGiFDpoER2a4Zy4wxJA86VRnBvFS2/view?usp=sharing",
-    "Month": "ஜனவரி",
-    "Poster": "மேஜஸின் முன்பக்க புகைப்படம்"
-  },
-  {
-   "id": 1,
-    "Year": "2024",
-    "Writer": "பிரியா அசோகன்",
-    "Title": "அற்புத தேவ கிருபை",
-    "ReadPdf": "https://drive.google.com/file/d/1P4rRroBRTZDsP7TaB3hjV5hwl6Qa7rkr/view?usp=sharing",
-    "Downloadpdf": "https://drive.google.com/file/d/1P4rRroBRTZDsP7TaB3hjV5hwl6Qa7rkr/view?usp=sharing",
-    "Month": "பிப்ரவரி",
-    "Poster": "மேஜஸின் முன்பக்க புகைப்படம்"
-  },
-  {
-   "id": 2,
-    "Year": "2024",
-    "Writer": "பிரியா அசோகன்",
-    "Title": "அற்புத தேவ கிருபை",
-    "ReadPdf": "https://drive.google.com/file/d/1wLitb-u7aSNkua1wZN7UORsLgv0d4okx/view?usp=sharing",
-    "Downloadpdf": "https://drive.google.com/file/d/1wLitb-u7aSNkua1wZN7UORsLgv0d4okx/view?usp=sharing",
-    "Month": "மார்ச்",
-    "Poster": "மேஜஸின் முன்பக்க புகைப்படம்"
-  },
-  {
-  "id": 3,
-    "Year": "2024",
-    "Writer": "பிரியா அசோகன்",
-    "Title": "அற்புத தேவ கிருபை",
-    "ReadPdf": "https://drive.google.com/file/d/1A4ISn4zzWNNFvSo2pyy1SJLyo26yw9Oc/view?usp=sharing",
-    "Downloadpdf": "https://drive.google.com/file/d/1A4ISn4zzWNNFvSo2pyy1SJLyo26yw9Oc/view?usp=sharing",
-    "Month": "ஏப்ரல்",
-    "Poster": "படம் இணைப்பு"
-  }
-]
-  const [magazineData, setMagazineData] = useState(data)
-
- 
+  const data = [
+    {
+      id: 0,
+      Year: "2024",
+      Writer: "Priya Ashokan",
+      Title: "Arputha Deva Kirubai",
+      ReadPdf:
+        "https://drive.google.com/file/d/1d95PGiFDpoER2a4Zy4wxJA86VRnBvFS2/view?usp=sharing",
+      Downloadpdf:
+        "https://drive.google.com/file/d/1d95PGiFDpoER2a4Zy4wxJA86VRnBvFS2/view?usp=sharing",
+      Month: "January",
+      Poster: "Magazine Front Cover",
+    },
+    {
+      id: 1,
+      Year: "2024",
+      Writer: "Priya Ashokan",
+      Title: "Arputha Deva Kirubai",
+      ReadPdf:
+        "https://drive.google.com/file/d/1P4rRroBRTZDsP7TaB3hjV5hwl6Qa7rkr/view?usp=sharing",
+      Downloadpdf:
+        "https://drive.google.com/file/d/1P4rRroBRTZDsP7TaB3hjV5hwl6Qa7rkr/view?usp=sharing",
+      Month: "February",
+      Poster: "Magazine Front Cover",
+    },
+    {
+      id: 2,
+      Year: "2024",
+      Writer: "Priya Ashokan",
+      Title: "Arputha Deva Kirubai",
+      ReadPdf:
+        "https://drive.google.com/file/d/1wLitb-u7aSNkua1wZN7UORsLgv0d4okx/view?usp=sharing",
+      Downloadpdf:
+        "https://drive.google.com/file/d/1wLitb-u7aSNkua1wZN7UORsLgv0d4okx/view?usp=sharing",
+      Month: "March",
+      Poster: "Magazine Front Cover",
+    },
+    {
+      id: 3,
+      Year: "2024",
+      Writer: "Priya Ashokan",
+      Title: "Arputha Deva Kirubai",
+      ReadPdf:
+        "https://drive.google.com/file/d/1A4ISn4zzWNNFvSo2pyy1SJLyo26yw9Oc/view?usp=sharing",
+      Downloadpdf:
+        "https://drive.google.com/file/d/1A4ISn4zzWNNFvSo2pyy1SJLyo26yw9Oc/view?usp=sharing",
+      Month: "April",
+      Poster: "Movie Poster",
+    },
+    {
+      id: 4,
+      Year: "2024",
+      Writer: "Priya Ashokan",
+      Title: "Arputha Deva Kirubai",
+      ReadPdf:
+        "https://drive.google.com/file/d/1YdJR1Lg3FlDa07CcfuuLG54KB51YgTGh/view?usp=drive_link",
+      Downloadpdf:
+        "https://drive.google.com/file/d/1YdJR1Lg3FlDa07CcfuuLG54KB51YgTGh/view?usp=drive_link",
+      Month: "May",
+      Poster: "Movie Poster",
+    },
+  ];
+  const [magazineData, setMagazineData] = useState(data);
 
   // useEffect( =>(
-  //   
+  //
   // ),[])
   // useEffect(() => {
   //   setcontextData(data);
@@ -215,16 +231,22 @@ const data = [
   return (
     <>
       <ImageSlider />
-      <p className='italic flex flex-col justify-center items-center gap-4 py-4 font-semibold text-xl'> <span className='font-bold text-2xl'>Proverbs 19:17</span>
-        "Whoever is kind to the poor lends to the LORD, and he will reward them for what they have done."</p>
-      <p className='text-center font-bold'>"நிறைந்த மனிதனுக்கு நன்மை செய்தவர் பயனராகும்; பலனை அவன் பெறும்."</p>
-      <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5'>
+      <p className="italic flex flex-col justify-center items-center gap-4 py-4 font-semibold text-xl">
+        {" "}
+        <span className="font-bold text-2xl">Proverbs 19:17</span>
+        "Whoever is kind to the poor lends to the LORD, and he will reward them
+        for what they have done."
+      </p>
+      <p className="text-center font-bold">
+        "நிறைந்த மனிதனுக்கு நன்மை செய்தவர் பயனராகும்; பலனை அவன் பெறும்."
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2">
         {magazineData.map((datas, index) => (
           <Magazine_Card key={index} datas={datas} />
         ))}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

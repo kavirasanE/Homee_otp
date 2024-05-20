@@ -20,7 +20,9 @@ import Axios from "axios";
 import Translatore from "./Translatore";
 import { Button, Modal } from "flowbite-react";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
+
 const Navbar = () => {
+ 
   // const { magazineId } = useContext(DataContext);
   const [openModal, setOpenModal] = useState(false);
   const [state, dispatch] = useReducer(FavouriteReducer, InitialState);
@@ -36,15 +38,15 @@ const Navbar = () => {
   const [openHamburgerMenu, setOpenHamburgerMenu] = useState(true);
 
   const handlePayment = async (e) => {
-    const API_URL = "http://localhost:3000";
+    const API_URL = "http://localhost:4000";
     e.preventDefault();
     const orderUrl = `${API_URL}/order`;
     const response = await Axios.get(orderUrl);
     const { data } = response;
-
+         
     const options = {
       key: "rzp_test_aIGcS929AXCx85",
-      name: "The Magazine",
+      name: "Aruputha Deva Kirubai Magazine",
       description: "Thanks",
       order_id: data.id,
       handler: async (response) => {
@@ -123,7 +125,7 @@ const Navbar = () => {
       </div>
       <div className="hidden  lg:flex flex-row  justify-between items-center bg-gray-200 ">
         <Link to="/">
-          <img src={logo1} className="w-48 h-20 " />
+          <img src={logo1} className="w-48 h-20 object-cover mx-5 " />
         </Link>
         <div className="flex flex-row  justify-between items-center gap-4 px-10 font-semibold text-xl">
           <div>
