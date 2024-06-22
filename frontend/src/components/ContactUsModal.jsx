@@ -9,7 +9,7 @@ const ContactUsModal = ({ setOpenContact }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
-    emailjs.init("vjazUY8mUI25kTAFy");
+    emailjs.init("kWSIM5mGEevt4YluX");
   }, []);
 
   const validationSchema = Yup.object().shape({
@@ -24,8 +24,8 @@ const ContactUsModal = ({ setOpenContact }) => {
   });
 
   const handleSubmit = async (values, { setSubmitting }) => {
-    const serviceID = "service_auo3u9i";
-    const templateID = "template_paoef4c";
+    const serviceID = "service_un5o0jg";
+    const templateID = "template_bx0osva";
     let sub = "";
     if (isChecked) {
       sub = " I like to Subscribe Your Magazine";

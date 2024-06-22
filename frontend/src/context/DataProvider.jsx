@@ -12,7 +12,6 @@ const DataProvider = ({children}) => {
         console.log(magazineId);
     },[contextData,magazineId])
 
-    
   return (
     <DataContext.Provider value={{setcontextData,setmagazineId ,magazineId,contextData}}>
         {children}

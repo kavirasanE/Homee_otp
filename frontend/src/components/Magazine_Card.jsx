@@ -5,9 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToFav } from "../redux/FavouriteSlice";
 import { bookmarkColor } from "../redux/FavouriteSlice";
 import { selectedBookmark } from "../redux/FavouriteSlice";
+
 // import { DataContext } from '../context/DataProvider';
 // import { InitialState } from '../store/FavouriteReducer';
 // import FavouriteReducer from '../store/FavouriteReducer'
+
 const Magazine_Card = ({ datas, index }) => {
   const [bookmarkcolor, setBookmarkColor] = useState(datas.color);
   // const { setmagazineId } = useContext(DataContext);
@@ -81,25 +83,24 @@ const Magazine_Card = ({ datas, index }) => {
             {datas.Title}
           </p>
           <p className="font-semibold text-xl text-start ">
-            {" "}
             {datas.Month} - {datas.Year}
           </p>
           {/* <p className='w-10 h-10  pl-10 cursor-pointer hover:scale-75' > */}
           {/* </p> */}
         </div>
-        
         <div className="p-3 flex">
-          <img src="https://drive.google.com/thumbnail?id=1y41BgI_WQWwciDGJ-xVYcmSBOt7fVGlZ"/>
-          <div className="px-5 flex flex-col justify-center items-start gap-10">
+          {/* <img src="https://drive.google.com/thumbnail?id=1y41BgI_WQWwciDGJ-xVYcmSBOt7fVGlZ"/> */}
+          <img src={datas.Poster} className="w-40 "/>
+          <div className="px-3 flex flex-col justify-center items-start gap-10">
             <p className="text-sm font-bold text-nowrap">
               <span className="font-semibold text-black/50  text-md">
                 Features :<br />
               </span>
-              Aruputha Manna
+              Arputha Manna
             </p>
             {/* <p className='text-sm'><span className='font-semibold text-md'>Articles : </span> Dare to Dream</p> */}
-            <p className="text-sm font-bold text-nowrap">
-              <span className="font-bold text-black/50 text-md">
+            <p className="text-sm font-bold text-wrap">
+              <span className="font-bold text-black/50 text-md ">
                 Writer: <br />
               </span>
               {datas.Writer}

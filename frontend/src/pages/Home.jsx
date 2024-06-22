@@ -3,9 +3,13 @@ import Navbar from "../components/Navbar";
 import Magazine_Card from "../components/Magazine_Card";
 import Footer from "../components/Footer";
 import { DataContext } from "../context/DataProvider";
-
 import ImageSlider from "../components/ImageSlider";
 import Marquee from "../components/Marquees";
+import jan from "../assets/magazine/jan.jpg";
+import feb from "../assets/magazine/feb.jpg";
+import mar from "../assets/magazine/mar.jpg";
+import apr from "../assets/magazine/apr.jpg";
+import may from "../assets/magazine/may.jpg";
 const Home = () => {
   // const data = [
   //   {
@@ -162,62 +166,62 @@ const Home = () => {
     {
       id: 0,
       Year: "2024",
-      Writer: "Priya Ashokan",
+      Writer: "Petricia Rathi Priya Ashokan",
       Title: "Arputha Deva Kirubai",
       ReadPdf:
         "https://drive.google.com/file/d/1d95PGiFDpoER2a4Zy4wxJA86VRnBvFS2/view?usp=sharing",
       Downloadpdf:
         "https://drive.google.com/file/d/1d95PGiFDpoER2a4Zy4wxJA86VRnBvFS2/view?usp=sharing",
       Month: "January",
-      Poster: "Magazine Front Cover",
+      Poster: jan,
     },
     {
       id: 1,
       Year: "2024",
-      Writer: "Priya Ashokan",
+      Writer: "Petricia Rathi Priya Ashokan",
       Title: "Arputha Deva Kirubai",
       ReadPdf:
         "https://drive.google.com/file/d/1P4rRroBRTZDsP7TaB3hjV5hwl6Qa7rkr/view?usp=sharing",
       Downloadpdf:
         "https://drive.google.com/file/d/1P4rRroBRTZDsP7TaB3hjV5hwl6Qa7rkr/view?usp=sharing",
       Month: "February",
-      Poster: "Magazine Front Cover",
+      Poster: feb,
     },
     {
       id: 2,
       Year: "2024",
-      Writer: "Priya Ashokan",
+      Writer: "Petricia Rathi Priya Ashokan",
       Title: "Arputha Deva Kirubai",
       ReadPdf:
         "https://drive.google.com/file/d/1wLitb-u7aSNkua1wZN7UORsLgv0d4okx/view?usp=sharing",
       Downloadpdf:
         "https://drive.google.com/file/d/1wLitb-u7aSNkua1wZN7UORsLgv0d4okx/view?usp=sharing",
       Month: "March",
-      Poster: "Magazine Front Cover",
+      Poster: mar,
     },
     {
       id: 3,
       Year: "2024",
-      Writer: "Priya Ashokan",
+      Writer: "Petricia Rathi Priya Ashokan",
       Title: "Arputha Deva Kirubai",
       ReadPdf:
         "https://drive.google.com/file/d/1A4ISn4zzWNNFvSo2pyy1SJLyo26yw9Oc/view?usp=sharing",
       Downloadpdf:
         "https://drive.google.com/file/d/1A4ISn4zzWNNFvSo2pyy1SJLyo26yw9Oc/view?usp=sharing",
       Month: "April",
-      Poster: "Movie Poster",
+      Poster: apr,
     },
     {
       id: 4,
       Year: "2024",
-      Writer: "Priya Ashokan",
+      Writer: "Petricia Rathi Priya Ashokan",
       Title: "Arputha Deva Kirubai",
       ReadPdf:
         "https://drive.google.com/file/d/1YdJR1Lg3FlDa07CcfuuLG54KB51YgTGh/view?usp=drive_link",
       Downloadpdf:
         "https://drive.google.com/file/d/1YdJR1Lg3FlDa07CcfuuLG54KB51YgTGh/view?usp=drive_link",
       Month: "May",
-      Poster: "Movie Poster",
+      Poster: may,
     },
   ];
   const [magazineData, setMagazineData] = useState(data);

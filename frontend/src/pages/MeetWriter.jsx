@@ -13,7 +13,7 @@ const MeetWriter = () => {
           <img src={Founder2} className="w-96 h-96 mb-5" />
         </div>
         <FaQuoteLeft className="lg:text-7xl text-4xl" />
-        <p className="text-justify lg:px-10 my-5 bg-red-200 lg:p-4 rounded-lg">
+        <p className="text-center md:text-justify lg:px-10 my-5 p-5 bg-red-200 lg:p-4 rounded-lg">
           <h1 className="font-bold text-lg my-2">About Priya Ashokan</h1>
           <span>
             Priya Ashokan is a distinguished Christian author, renowned for her

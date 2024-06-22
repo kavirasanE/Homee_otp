@@ -22,7 +22,6 @@ import { Button, Modal } from "flowbite-react";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 
 const Navbar = () => {
- 
   // const { magazineId } = useContext(DataContext);
   const [openModal, setOpenModal] = useState(false);
   const [state, dispatch] = useReducer(FavouriteReducer, InitialState);
@@ -43,7 +42,7 @@ const Navbar = () => {
     const orderUrl = `${API_URL}/order`;
     const response = await Axios.get(orderUrl);
     const { data } = response;
-         
+
     const options = {
       key: "rzp_test_aIGcS929AXCx85",
       name: "Aruputha Deva Kirubai Magazine",
@@ -86,30 +85,28 @@ const Navbar = () => {
           </span>
         </p>
         <p className="flex gap-2 pt-2">
-          <span onClick={() => setOpenModal(true)} className="underline cursor-pointer">Language</span>
-          <div className="absolute w-80" >
-            <Modal
-              show={openModal}
-              onClose={() => setOpenModal(false)}
-              popup
-            >
+          <span
+            onClick={() => setOpenModal(true)}
+            className="underline cursor-pointer"
+          >
+            Language
+          </span>
+          <div className="absolute w-80">
+            <Modal show={openModal} onClose={() => setOpenModal(false)} popup>
               <Modal.Header />
               <Modal.Body>
-                
-                <div className="flex justify-center items-center gap-4" >
+                <div className="flex justify-center items-center gap-4">
+                  <Translatore openModal={openModal} />
+                </div>
 
-                  <Translatore openModal= {openModal}/>
-                  </div>
-        
-               <div className="flex flex-roe justify-center p-2">
-
+                <div className="flex flex-roe justify-center p-2">
                   <Button
-                      className="bg-red-900"
-                      onClick={() => setOpenModal(false)}
-                    >
-                      close
-                    </Button>
-               </div>
+                    className="bg-red-900"
+                    onClick={() => setOpenModal(false)}
+                  >
+                    close
+                  </Button>
+                </div>
               </Modal.Body>
             </Modal>
           </div>
@@ -245,7 +242,6 @@ p-2 pl-10 cursor-pointer flex justify-center items-center "
             </p>
           )}
           <Link title="Bookmarks" className="pr-4" to="/fav">
-          
             <LiaCrossSolid
               size={20}
               className=" rounded-full  w-10 h-10  cursor-pointer hover:scale-90 duration-150 translate-x-2 transition-transform ease-in-out"
@@ -253,7 +249,10 @@ p-2 pl-10 cursor-pointer flex justify-center items-center "
           </Link>
           <button
             className="bg-rose-600 text-white text-sm subpixel-antialiased px-6 p-1 rounded-md"
-            onClick={handlePayment}
+            // onClick={handlePayment}
+            onClick={() => {
+              setOpenContact(true);
+            }}
           >
             DONATE US
           </button>
@@ -265,18 +264,18 @@ p-2 pl-10 cursor-pointer flex justify-center items-center "
           <Link to="/">
             <img
               src={logo1}
-              className="w-30 h-10"
+              className="h-16 w-40 object-cover"
               onClick={() => setOpenHamburgerMenu(true)}
             />
           </Link>
           {openHamburgerMenu ? (
             <GiHamburgerMenu
-              className="text-4xl mx-5"
+              className="text-3xl mx-5 border border-black/20 rounded-lg p-1"
               onClick={() => setOpenHamburgerMenu(false)}
             />
           ) : (
             <IoCloseSharp
-              className="text-4xl mx-5"
+              className="text-3xl mx-5 border border-black/20 rounded-lg p-1"
               onClick={() => setOpenHamburgerMenu(true)}
             />
           )}
@@ -372,7 +371,12 @@ p-2 pl-10 cursor-pointer flex justify-center items-center "
               )}
               <LiaCrossSolid size={40} />
             </Link>
-            <button className="bg-rose-600 text-white subpixel-antialiased px-10 p-1 rounded-md font-semibold">
+            <button
+              className="bg-rose-600 text-white subpixel-antialiased px-10 p-1 rounded-md font-semibold"
+              onClick={() => {
+                setOpenContact(true);
+              }}
+            >
               DONATE US
             </button>
           </div>
