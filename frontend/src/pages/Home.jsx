@@ -10,6 +10,7 @@ import feb from "../assets/magazine/feb.jpg";
 import mar from "../assets/magazine/mar.jpg";
 import apr from "../assets/magazine/apr.jpg";
 import may from "../assets/magazine/may.jpg";
+import june from "../assets/magazine/june.jpg";
 const Home = () => {
   // const data = [
   //   {
@@ -162,6 +163,8 @@ const Home = () => {
   // }
   // ]
 
+
+
   const data = [
     {
       id: 0,
@@ -223,7 +226,20 @@ const Home = () => {
       Month: "May",
       Poster: may,
     },
+    {
+      id: 5,
+      Year: "2024",
+      Writer: "Petricia Rathi Priya Ashokan",
+      Title: "Arputha Deva Kirubai",
+      ReadPdf:
+        "https://drive.google.com/file/d/1sfhlXO8CtyiBzmg1rtxR1ubSg_fT4GHX/view?usp=sharing",
+      Downloadpdf:
+        "https://drive.google.com/file/d/1sfhlXO8CtyiBzmg1rtxR1ubSg_fT4GHX/view?usp=sharing",
+      Month: "June",
+      Poster: june,
+    },
   ];
+  
   const [magazineData, setMagazineData] = useState(data);
 
   // useEffect( =>(
@@ -242,7 +258,7 @@ const Home = () => {
         for what they have done."
       </p>
       <p className="text-center font-bold">
-        "நிறைந்த மனிதனுக்கு நன்மை செய்தவர் பயனராகும்; பலனை அவன் பெறும்."
+        "ஏழைக்கு இரங்குகிறவன் கர்த்தருக்குக் கடன்கொடுக்கிறான்; அவன் கொடுத்ததை அவர் திரும்பக் கொடுப்பார்."
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2">
         {magazineData.map((datas, index) => (

@@ -71,16 +71,14 @@ const Navbar = () => {
     <>
       <div className="bg-blue-200 flex lg:flex-row flex-col lg:justify-between lg:items-center font-bold px-2 lg:px-10 py-3">
         <p>
-          {" "}
-          Prayer Helpline:{" "}
+          Prayer Helpline:
           <a href="tel:9443068599" className="underline">
             9443068599
-          </a>{" "}
+          </a>
           <span className="lg:px-4">
-            {" "}
             Email:
-            <a href="mailto:Charity@gamil.com" className="underline">
-              Charity@gamil.com
+            <a href="mailto:arputhadevakirubaimag@gmail.com" className="underline">
+            arputhadevakirubaimag@gmail.com
             </a>
           </span>
         </p>

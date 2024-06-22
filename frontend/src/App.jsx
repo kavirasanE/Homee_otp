@@ -16,7 +16,7 @@ const App = () => {
   return (
     <div>
         <BrowserRouter>
-        <a className='fixed  bottom-5 right-5 z-50' href='https://wa.me/9443068599'>
+        <a className='fixed  bottom-5 right-5 z-50' href='https://wa.me/9443068599' target='_blank'>
           <FaWhatsapp  size={50} className=' bg-green-500 text-white rounded-lg'/>
         </a>
         <div>

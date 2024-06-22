@@ -14,14 +14,13 @@ const Footer = () => {
                 </p> */}
           <div className="flex flex-col py-5 lg:justify-start lg:items-center  items-center gap-2">
             <span className="font-bold text-xl">
-              Dr. T. Patricia Rathi Priya
+              Dr. T. Petricia Rathi Priya
             </span>
             <span>W/o. (Late) Bro. R. Ashokan</span>
             <span>61-B, 34, Mowbray House,</span>
             <span>Church Hill Road, Ooty</span>
             <span>The Nilgiris - 643001</span>
           </div>
-
           {/* <p className=' flex flex-col justify-center items-center gap-2 '>
                     <span>Physical Address:</span>
                     <span>1 Innovation Way</span>
